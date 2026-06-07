@@ -1,0 +1,390 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav button:hover,
+.nav button.active {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-success {
+  background: #48bb78;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #38a169;
+}
+
+.btn-danger {
+  background: #f56565;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #e53e3e;
+}
+
+.btn-secondary {
+  background: #718096;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #4a5568;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.application-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.application-item {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.application-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.application-item h3 {
+  font-size: 1.1rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.application-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-draft {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.status-submitted {
+  background: #bee3f8;
+  color: #2b6cb0;
+}
+
+.status-reviewing {
+  background: #fefcbf;
+  color: #975a16;
+}
+
+.status-rejected {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.status-approved,
+.status-permit_pending {
+  background: #c6f6d5;
+  color: #276749;
+}
+
+.status-permit_issued {
+  background: #d6bcfa;
+  color: #553c9a;
+}
+
+.drawing-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.drawing-item {
+  background: #f7fafc;
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.drawing-item.fire-safety {
+  border-color: #f56565;
+  background: #fff5f5;
+}
+
+.drawing-item .drawing-type {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.drawing-item .drawing-name {
+  font-size: 0.85rem;
+  color: #718096;
+  word-break: break-all;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background: #fed7d7;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+.alert-success {
+  background: #c6f6d5;
+  color: #276749;
+  border: 1px solid #9ae6b4;
+}
+
+.alert-warning {
+  background: #fefcbf;
+  color: #975a16;
+  border: 1px solid #faf089;
+}
+
+.review-section {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.review-item {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.review-item .reviewer {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.review-item .review-time {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  margin-bottom: 0.5rem;
+}
+
+.time-slots {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.time-slot {
+  background: #edf2f7;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.permit-info {
+  background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+  border: 1px solid #9ae6b4;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.permit-info h3 {
+  color: #276749;
+  margin-bottom: 0.75rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 200px;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+}
+
+.file-upload {
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-upload:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.tab.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
